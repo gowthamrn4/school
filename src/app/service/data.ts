@@ -39,7 +39,7 @@ export class DataService {
 
 
   getAllStudents(){
-    return this.http.get('https://5bdbe65b433b4f0013e6e024.mockapi.io/student')
+    return this.http.get('/api/example/students')
     .pipe(map(data=>this.allStudents=data.json()))
   }
   transferStudent1(value){
@@ -84,55 +84,19 @@ export class DataService {
   //   }))
   // }
   /* POST NEW NEWS */
-  createStudent(value){
-    return this.http.post('https://5bdbe65b433b4f0013e6e024.mockapi.io/student',value)
-    .pipe(map(data=>this.cstudent=data.json()))
+  createStudent($scope){
+    return this.http.get('/api/example/create-student?studentId='+$scope.studentId+'&studentName='+$scope.studentName+'&dob='+$scope.dob+'&fatherName='+$scope.fatherName+'&motherName='+$scope.motherName+'&gender='+$scope.gender+'&standard='+$scope.standard+'&school=O=SchoolB, L=Mumbai, C=IN&deo=O=DEO, L=Delhi, C=IN')
+    // .pipe(map(data=>this.cstudent=data.json()))
    
   }
-  /*END POST NEW NEWS */
+  updateStudent($scope){
+    return this.http.get('/api/example/update-student?studentId='+$scope.studentId+'&studentName='+$scope.studentName+'&dob='+$scope.dob+'&fatherName='+$scope.fatherName+'&motherName='+$scope.motherName+'&gender='+$scope.gender+'&standard='+$scope.standard+'&school=O=SchoolB, L=Mumbai, C=IN&deo=O=DEO, L=Delhi, C=IN')
 
+  }
+  findStudent($scope){
+    return this.http.get('/api/example/student?studentId='+$scope.studentId)
+  
+  }
 
-  /*POST USER DETAILS */
-
-  /* END GET NEW COMPLAINT */
-
-  /*GET NEW MAINTENANCE */
-
-  /* END GET NEW MAINTENACE */
-
-  /* GET NEW REQUEST */
-
-  /* END NEW REQUEST */
-
-
-  /* GET OLD COMPLAINT */
-
-  /* END OLD COMPLAINT */
-
-
-  /* GET OLD Request  */
-
-  /* END OLD Request */
-
-  /* GET OLD Maintenance Request */
-
-/* End GET OLD Maintenance Request */
-
-
- /* Find User  */
-
-/* End Find User */
-
-/*
- Notification For Complaint 
-*/
-
- /*
- End Notification For Complaint
-  */
-
-
-
-// https://flatsafety.herokuapp.com/notification/createNotify//
 }
 

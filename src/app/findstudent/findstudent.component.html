@@ -1,27 +1,27 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-4">
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group label-floating is-empty">
+                <label class="control-label">Enter Student ID</label>
+                <input type="text" name="studentId" #name="ngModel" class="form-control" [(ngModel)]="student.studentId" minlength="4" ngModel required>
+                <div *ngIf="name.errors && name.touched" class="alert text-danger">
+                    <div [hidden]="!name.errors.required">
+                        * Enter Student ID
+                    </div>
+
+                </div>
+                <span class="material-input"></span>
+            </div>
+        </div>
 
     </div>
-    <div class="col-md-4">
-        <div class="form-group label-floating is-empty">
-    <label class="control-label">Enter Student ID</label>
-            <input type="text" name="name" #name="ngModel" class="form-control" minlength="4" ngModel required >
-            <div *ngIf="name.errors && name.touched" class="alert text-danger">
-                <div [hidden]="!name.errors.required">
-                    * Enter  Student ID
-                </div>
-                  
-            </div>    
-            <span class="material-input"></span>
-        </div>                  
-     </div>
-
-     </div>
-     <div class="row text-center">
-       <div class="col-md-3"></div>
-       <div class="col-md-6">
-         <button class="btn btn-primary">Find</button>
-       </div>
-     </div>
+    <div class="row text-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <button class="btn btn-primary" (click)="findStudent()">Find</button>
+        </div>
+    </div>
 </div>

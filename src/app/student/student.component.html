@@ -1,97 +1,96 @@
-
 <div class="container">
-  <h5>Create Student</h5>
-  <form #addmissionForm="ngForm" (ngSubmit)='newStudent(addmissionForm.value)' 
-  method="#" action="#">
-     <div class="row">
-         <div class="col-md-1">
+    <h5>Create Student</h5>
+    <form #addmissionForm="ngForm" (ngSubmit)='newStudent(addmissionForm.value)' method="#" action="#">
+        <div class="row">
+            <div class="col-md-1">
 
-         </div>
-        <div class="col-md-3">
-           <div class="form-group label-floating is-empty">
-       <label class="control-label">Name</label>
-               <input type="text" name="name" #name="ngModel" class="form-control" minlength="4" ngModel required >
-               <div *ngIf="name.errors && name.touched" class="alert text-danger">
-                   <div [hidden]="!name.errors.required">
-                       * Enter  Name
-                   </div>
-                   <div [hidden]="!name.errors.minlength">
-                           * Please fill atleast 4 character
-                   </div>    
-               </div>    
-               <span class="material-input"></span>
-           </div>                  
-        </div>
-        <div class="col-md-3">
-           <div class="form-group label-floating is-empty">
-       <label class="control-label">Father Name</label>
-               <input type="text" name="fathername" #fathername="ngModel" class="form-control" minlength="4"  ngModel required>
-               <div *ngIf="fathername.errors && fathername.touched" class="alert text-danger">
-                   <div [hidden]="!fathername.errors.required">
-                       * Enter  Fathername
-                   </div>
-                   <div [hidden]="!name.errors.minlength">
-                           * Please fill atleast 4 character
-                   </div>     
-               </div>    
-               <span class="material-input"></span>
-           </div>                   
-        </div>
-        <div class="col-md-3">
-           <div class="form-group label-floating is-empty">
-       <label class="control-label">Mother Name</label>
-       <input type="text" name="mothername" #mothername="ngModel" class="form-control" minlength="4" ngModel required >
-               <div *ngIf="mothername.errors && mothername.touched" class="alert text-danger">
-                   <div [hidden]="!mothername.errors.required">
-                       * Enter  Mothername
-                   </div>
-                   <div [hidden]="!name.errors.minlength">
-                           * Please fill atleast 4 character
-                   </div>     
-               </div>     
-               <span class="material-input"></span>
-           </div>                  
-        </div>
-      
-     </div>
-     <div class="row">
-         <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="form-group label-floating is-empty">
+                    <label class="control-label">Name</label>
+                    <input type="text" name="studentName" #name="ngModel" class="form-control" minlength="4" ngModel required>
+                    <div *ngIf="name.errors && name.touched" class="alert text-danger">
+                        <div [hidden]="!name.errors.required">
+                            * Enter Name
+                        </div>
+                        <div [hidden]="!name.errors.minlength">
+                            * Please fill atleast 4 character
+                        </div>
+                    </div>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group label-floating is-empty">
+                    <label class="control-label">Father Name</label>
+                    <input type="text" name="fatherName" #fathername="ngModel" class="form-control" minlength="4" ngModel required>
+                    <div *ngIf="fathername.errors && fathername.touched" class="alert text-danger">
+                        <div [hidden]="!fathername.errors.required">
+                            * Enter Fathername
+                        </div>
+                        <div [hidden]="!name.errors.minlength">
+                            * Please fill atleast 4 character
+                        </div>
+                    </div>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group label-floating is-empty">
+                    <label class="control-label">Mother Name</label>
+                    <input type="text" name="motherName" #mothername="ngModel" class="form-control" minlength="4" ngModel required>
+                    <div *ngIf="mothername.errors && mothername.touched" class="alert text-danger">
+                        <div [hidden]="!mothername.errors.required">
+                            * Enter Mothername
+                        </div>
+                        <div [hidden]="!name.errors.minlength">
+                            * Please fill atleast 4 character
+                        </div>
+                    </div>
+                    <span class="material-input"></span>
+                </div>
+            </div>
 
-         </div>
-         <div class="col-md-3">
-            <div class="form-group label-floating is-empty">
-                <input type="date" name="dob" #dob="ngModel" class="form-control"  ngModel required >
-                <div *ngIf="dob.errors && dob.touched" class="alert text-danger">
-                   <div [hidden]="!dob.errors.required">
-                       * Select  dob
-                   </div>
-               </div>   
-                <span class="material-input"></span>
-           </div>                
-         </div>
-         <div class="col-md-3">
-            <div class="form-group label-floating is-empty">
-                <label class="control-label"></label>
-                <!-- <input type="text" name="gender" ngModel="gender" class="form-control"  ngModel required > -->
-                <select name="gender" #gender="ngModel" class="form-control"  ngModel required >
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Date of birth</label>
+                    <input type="date" name="dob" #dob="ngModel" class="form-control" ngModel required>
+                    <div *ngIf="dob.errors && dob.touched" class="alert text-danger">
+                        <div [hidden]="!dob.errors.required">
+                            * Select dob
+                        </div>
+                    </div>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Gender</label>
+                    <!-- <input type="text" name="gender" ngModel="gender" class="form-control"  ngModel required > -->
+                    <select name="gender" #gender="ngModel" class="form-control" ngModel required>
                     <option value="" disabled> Gender </option>
                     <option value="Male">   Male </option>
                     <option value="Female"> Female </option>
                     <option value="Other">  Other </option>
                 </select>
-                <div *ngIf="gender.errors && gender.touched" class="alert text-danger">
-                   <div [hidden]="!gender.errors.required">
-                       * Select gender 
-                   </div>
-               </div>      
-              <span class="material-input"></span>
-           </div>                  
-         </div>
-         <div class="col-md-3">
-                <div class="form-group label-floating is-empty">
-                    <label class="control-label"></label>
+                    <div *ngIf="gender.errors && gender.touched" class="alert text-danger">
+                        <div [hidden]="!gender.errors.required">
+                            * Select gender
+                        </div>
+                    </div>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Standard</label>
                     <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
-                    <select name="standard" #standard="ngModel" class="form-control"  ngModel required >
+                    <select name="standard" #standard="ngModel" class="form-control" ngModel required>
                            <option value="" disabled> Standard </option>
                            <option value="1">   1 </option>
                            <option value="2">   2 </option>
@@ -105,30 +104,29 @@
                            <option value="10">   10 </option>
                            <option value="11">   11 </option>
                            <option value="12">   12</option>
-                       </select> 
+                       </select>
                     <div *ngIf="standard.errors && standard.touched" class="alert text-danger">
-                       <div [hidden]="!standard.errors.required">
-                           * Enter  standard
-                       </div>
-                   </div>   
+                        <div [hidden]="!standard.errors.required">
+                            * Enter standard
+                        </div>
+                    </div>
                     <span class="material-input"></span>
-               </div>                 
-             </div>
+                </div>
+            </div>
 
-        
 
-      </div>
-      <div class="row">
-       
-        
-      
-      </div>
-      <div class="row">
-          <div class="col-md-offset-4 col-md-4 text-center">
-               <button class="btn btn-primary btn-round" type="submit" [disabled]="!addmissionForm.form.valid" >Create Student</button>
-          </div>
-      </div>
-  
-  </form>
+
+        </div>
+        <div class="row">
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 text-center">
+                <button class="btn btn-primary btn-round" type="submit" [disabled]="!addmissionForm.form.valid">Create Student</button>
+            </div>
+        </div>
+
+    </form>
 </div>
-

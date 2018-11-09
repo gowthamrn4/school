@@ -16,11 +16,18 @@ export class StudentComponent implements OnInit {
   ngOnInit() {
   }
   newStudent(value){
-       
-    console.log(value);
+    let data={
+      studentId: "SCL" +value.standard+ Math.random().toString(20).slice(2),
+      studentName:value.studentName,
+      dob:value.dob,
+      fatherName:value.fatherName,
+      motherName:value.motherName,
+      gender:value.gender,
+      standard:value.standard
+    }
 
       // http call ends
-  this.dataservice.createStudent(value).subscribe(res=>{
+  this.dataservice.createStudent(data).subscribe(res=>{
     this.newstudent=res;
     alert("Add sucessfully")
          // http call ends

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../service/data';
 import {Router, ActivatedRoute} from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-editstudent',
   templateUrl: './editstudent.component.html',
@@ -11,19 +12,13 @@ export class EditstudentComponent implements OnInit {
   allStudents: any;
   id: any;
   editStudent:any={
-    _id: '',
-  aadharnumber:'',
-  bloodgroup:'',
-  dob:'',
-  doj:'',
-  fathername:'',
-  fatheroccupation:'',
-  gender:'',
-  mobilenumber:'',
-  mothername:'',
-  name:'',
-  standard:'',
-  motheroccupation:''
+  //   _id: '',
+  // dob:'',
+  // fatherName:'',
+  // gender:'',
+  // motherName:'',
+  // studentName:'',
+  // standard:'',
   };
     constructor( public dataservice: DataService,
                  public router: Router,
@@ -37,27 +32,22 @@ export class EditstudentComponent implements OnInit {
        for(let i=0 ; i < this.allStudents.length ; i++){
        if(this.id===this.allStudents[i]._id){
          this.editStudent._id=this.allStudents[i]._id;
-         this.editStudent.name=this.allStudents[i].name;
+         this.editStudent.studentId=this.allStudents[i].studentId
+         this.editStudent.studentName=this.allStudents[i].name;
          this.editStudent.dob=this.allStudents[i].dob;
-         this.editStudent.aadharnumber=this.allStudents[i].aadharnumber;
-         this.editStudent.fathername=this.allStudents[i].fathername;
-         this.editStudent.mothername=this.allStudents[i].mothername;
+         this.editStudent.fatherName=this.allStudents[i].fathername;
+         this.editStudent.motherName=this.allStudents[i].mothername;
          this.editStudent.gender=this.allStudents[i].gender;
-         this.editStudent.doj=this.allStudents[i].doj;
-         this.editStudent.bloodgroup=this.allStudents[i].bloodgroup;
-         this.editStudent.mobilenumber=this.allStudents[i].mobilenumber;
          this.editStudent.standard=this.allStudents[i].standard;
-         this.editStudent.fatheroccupation=this.allStudents[i].fatheroccupation;
-         this.editStudent.motheroccupation=this.allStudents[i].motheroccupation;
        }
        }
     });
   }
-  // updateStudent () {
-  //   this.dataservice.updateStudent(this.editStudent).subscribe(res => {
-  //     console.log(res);
-  //     this.router.navigate(['/app/allstudents']);
-  //   });
-  // }
+  updateStudent () {
+    this.dataservice.updateStudent(this.editStudent).subscribe(res => {
+      console.log(res);
+      this.router.navigate(['/app/allstudents']);
+    });
+  }
 
 }

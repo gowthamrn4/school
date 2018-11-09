@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../service/data'
 
 @Component({
   selector: 'app-findstudent',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FindstudentComponent implements OnInit {
 
-  constructor() { }
+  student={}
+  constructor(public dataService:DataService) { }
+
 
   ngOnInit() {
   }
+
+  findStudent(){
+    this.dataService.findStudent(this.student).subscribe(res=>{
+      
+    })
+  }
+
 
 }
