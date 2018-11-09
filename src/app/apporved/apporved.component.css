@@ -1,0 +1,23 @@
+.form-group {
+    padding-bottom: 0px;
+    margin: 0px 0 0 0;
+}
+.alert{
+    padding: 0px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+}
+.secondRow{
+    margin-top: 2rem;
+}
+h4{
+    font-size: 1.15rem;
+}
+.btnTabs{
+padding:0 7.15rem; 
+}
+@media (min-width:768px) and (max-width:992px){
+    .btnTabs{
+        padding:0 2.4rem; 
+        } 
+}

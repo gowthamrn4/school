@@ -1,0 +1,19 @@
+.card{
+    max-width:400px;
+ 
+    background:purple;
+  
+    padding:10px;
+    border:10px solid purple;
+    margin-top:30px;
+    
+}
+.card span {
+    color:white;
+    font-size:17px;
+    text-justify: inter-word;}
+.card h5{
+    color:purple;
+    background: white;
+    font-weight: bold;
+}

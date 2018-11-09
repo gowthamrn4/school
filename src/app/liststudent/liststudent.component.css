@@ -1,0 +1,15 @@
+
+h4{
+    font-size: 1.15rem;
+}
+.notification{
+    font-size:15px;
+   background:lightcoral;
+   color:white;
+   text-align: center;
+   padding:4px;
+}
+.nav a
+{
+    font-size:11px;
+}

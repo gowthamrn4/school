@@ -1,0 +1,228 @@
+<div class="container">
+  <h5>Update Student</h5>
+  <form #editStudentForm="ngForm" (ngSubmit)='updateStudent(editStudentForm.value)' method="#" action="#">
+      <div class="row">
+          <div class="col-md-3">
+              <div class="form-group is-empty">
+                  <label class="control-label">Name</label>
+                  <input type="text" name="name" #name="ngModel" class="form-control" [(ngModel)]="editStudent.name" minlength="4" ngModel required>
+                  <div *ngIf="name.errors && name.touched" class="alert text-danger">
+                      <div [hidden]="!name.errors.required">
+                          * Enter Name
+                      </div>
+                      <div [hidden]="!name.errors.minlength">
+                          * Please fill atleast 4 character
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group is-empty">
+                  <label class="control-label">Father Name</label>
+                  <input type="text" name="fathername" #fathername="ngModel" [(ngModel)]="editStudent.fathername" class="form-control" minlength="4" ngModel required>
+                  <div *ngIf="fathername.errors && fathername.touched" class="alert text-danger">
+                      <div [hidden]="!fathername.errors.required">
+                          * Enter Fathername
+                      </div>
+                      <div [hidden]="!name.errors.minlength">
+                          * Please fill atleast 4 character
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group is-empty">
+                  <label class="control-label">Mother Name</label>
+                  <input type="text" name="mothername" #mothername="ngModel" [(ngModel)]="editStudent.mothername" class="form-control" minlength="4" ngModel required>
+                  <div *ngIf="mothername.errors && mothername.touched" class="alert text-danger">
+                      <div [hidden]="!mothername.errors.required">
+                          * Enter Mothername
+                      </div>
+                      <div [hidden]="!name.errors.minlength">
+                          * Please fill atleast 4 character
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">Aadhar Number</label>
+                  <input type="text" name="aadharnumber" pattern="[0-9]+" minlength="12" maxlength="12" [(ngModel)]="editStudent.aadharnumber" #aadharnumber="ngModel" class="form-control" ngModel required>
+                  <div *ngIf="aadharnumber.errors && aadharnumber.touched" class="alert text-danger">
+                      <div [hidden]="!aadharnumber.errors.required">
+                          * Enter aadharnumber
+                      </div>
+                      <div [hidden]="!aadharnumber.errors.minlength">
+                          * Enter 12 char
+                      </div>
+                      <div [hidden]="!aadharnumber.errors.pattern">
+                          * Enter numeric
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">DOB</label>
+                  <input type="date" name="dob" #dob="ngModel" [(ngModel)]="editStudent.dob" class="form-control" ngModel required>
+                  <div *ngIf="dob.errors && dob.touched" class="alert text-danger">
+                      <div [hidden]="!dob.errors.required">
+                          * Select dob
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">Gender</label>
+                  <!-- <input type="text" name="gender" ngModel="gender" class="form-control"  ngModel required > -->
+                  <select name="gender" #gender="ngModel" [(ngModel)]="editStudent.gender" class="form-control" ngModel required>
+               <option value="" disabled> Gender </option>
+               <option value="Male">   Male </option>
+               <option value="Female"> Female </option>
+               <option value="Other">  Other </option>
+           </select>
+                  <div *ngIf="gender.errors && gender.touched" class="alert text-danger">
+                      <div [hidden]="!gender.errors.required">
+                          * Select gender
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group is-empty">
+                  <label class="control-label">Mobile Nmuber</label>
+                  <input type="text" name="mobilenumber" pattern="[0-9]+" [(ngModel)]="editStudent.mobilenumber" minlength="10" maxlength="10" #mobilenumber="ngModel" class="form-control" ngModel required>
+                  <div *ngIf="mobilenumber.errors && mobilenumber.touched" class="alert text-danger">
+                      <div [hidden]="!mobilenumber.errors.required">
+                          * Enter mobilenumber
+                      </div>
+                      <div [hidden]="!mobilenumber.errors.minlength">
+                          * Enter 10 char
+                      </div>
+                      <div [hidden]="!mobilenumber.errors.pattern">
+                          * Enter numeric
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">Date Of Joining</label>
+                  <input type="text" name="doj" #doj="ngModel" [(ngModel)]="editStudent.doj" class="form-control" ngModel required>
+                  <span class="material-input"></span>
+                  <div *ngIf="doj.errors && doj.touched" class="alert text-danger">
+                      <div [hidden]="!doj.errors.required">
+                          * Enter doj
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">Standart</label>
+                  <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
+                  <select name="standard" #standard="ngModel" [(ngModel)]="editStudent.standard" class="form-control" ngModel required>
+                  <option value="" disabled> Standard </option>
+                  <option value="1">   1 </option>
+                  <option value="2">   2 </option>
+                  <option value="3">   3 </option>
+                  <option value="4">   4 </option>
+                  <option value="5">   5 </option>
+                  <option value="6">   6 </option>
+                  <option value="7">   7 </option>
+                  <option value="8">   8 </option>
+                  <option value="9">   9 </option>
+                  <option value="10">   10 </option>
+                  <option value="11">   11 </option>
+                  <option value="12">   12</option>
+              </select>
+                  <div *ngIf="standard.errors && standard.touched" class="alert text-danger">
+                      <div [hidden]="!standard.errors.required">
+                          * Enter standard
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">Blood Group</label>
+                  <!-- <input type="text" name="bloodgroup" #bloodgroup="ngModel" class="form-control"  ngModel required > -->
+                  <select name="bloodgroup" #bloodgroup="ngModel" [(ngModel)]="editStudent.bloodgroup" class="form-control" ngModel required>
+                  <option value="" disabled> Blood Group </option>
+                  <option value="A+">   A+ </option>
+                  <option value="B+">   B+ </option>
+                  <option value="O+">   O+ </option>
+              </select>
+                  <div *ngIf="bloodgroup.errors && bloodgroup.touched" class="alert text-danger">
+                      <div [hidden]="!bloodgroup.errors.required">
+                          * Enter bloodgroup
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group  is-empty">
+                  <label class="control-label">Father Occupation</label>
+                  <!-- <input type="text" name="fatheroccupation" #fatheroccupation="ngModel" class="form-control" minlength="4"  ngModel required > -->
+                  <select name="fatheroccupation" #fatheroccupation="ngModel" [(ngModel)]="editStudent.fatheroccupation" class="form-control" ngModel required>
+                  <option value="" disabled> Father Occupation </option>
+                  <option value="Employeer">   Employeer </option>
+                  <option value="Goverment Employee"> Goverment Employee </option>
+                  <option value="Daily wage">  Daily wage </option>
+              </select>
+                  <div *ngIf="fatheroccupation.errors && fatheroccupation.touched" class="alert text-danger">
+                      <div [hidden]="!fatheroccupation.errors.required">
+                          * Enter fatheroccupation
+                      </div>
+                      <div [hidden]="!fatheroccupation.errors.minlength">
+                          * Please fill atleast 4 character
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+
+          </div>
+          <div class="col-md-3">
+              <div class="form-group is-empty">
+                  <label class="control-label">Mother Occupation</label>
+                  <!-- <input type="text" name="motheroccupation" #motheroccupation="ngModel" class="form-control" minlength="4" ngModel required > -->
+                  <select name="motheroccupation" #motheroccupation="ngModel" [(ngModel)]="editStudent.motheroccupation" class="form-control" ngModel required>
+                  <option value="" disabled> Mother Occupation </option>
+                  <option value="Employeer">   Employeer </option>
+                  <option value="Goverment Employee"> Goverment Employee </option>
+                  <option value="Daily wage">  Daily wage </option>
+              </select>
+                  <div *ngIf="motheroccupation.errors && motheroccupation.touched" class="alert text-danger">
+                      <div [hidden]="!motheroccupation.errors.required">
+                          * Enter motheroccupation
+                      </div>
+                      <div [hidden]="!motheroccupation.errors.minlength">
+                          * Please fill atleast 4 character
+                      </div>
+                  </div>
+                  <span class="material-input"></span>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-offset-4 col-md-4 text-center">
+              <button class="btn btn-primary btn-round" type="submit">Update</button>
+          </div>
+      </div>
+     
+  </form>
+</div>

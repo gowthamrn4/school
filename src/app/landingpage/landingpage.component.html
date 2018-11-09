@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <nav class="navbar navbar-primary navbar-fixed-top"    id="sectionsNav">
+ <div class="container landingContainer" style="position: relative">
+   <!-- Brand and toggle get grouped for better mobile display -->
+   <div class="navbar-header">
+     <button type="button" class="navbar-toggle" data-toggle="collapse">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button>
+   </div>
+
+   <div class="collapse navbar-collapse">
+
+     <ul class="nav navbar-nav navbar-right" >
+        
+       <li class="dropdown" id="headerNavigationItems">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+           <i class="material-icons"></i> Students
+           <b class="caret"></b>
+         </a>
+         <ul class="dropdown-menu dropdown-with-icons">
+           <li>
+             <a routerLink="/app/student">
+               <i class="fas fa-exchange-alt fa-lg"></i>Add Students
+             </a>
+           </li>
+           <li>
+            <a routerLink="/app/liststudent">
+              <i class="fas fa-exchange-alt fa-lg"></i>List Of Students
+            </a>
+          </li>
+         </ul>
+       </li>
+
+
+
+       <li class="dropdown" id="headerNavigationItems">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="material-icons"></i> Transfer students
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu dropdown-with-icons">
+          <li>
+            <a routerLink="/app/incommingtransfer">
+              <i class="fas fa-exchange-alt fa-lg"></i>Incomming Transfer
+            </a>
+          </li>
+          <li>
+           <a routerLink="/app/outgoingtransfer">
+             <i class="fas fa-exchange-alt fa-lg"></i>Outgoing Transfer
+           </a>
+         </li>
+         <li>
+            <a routerLink="/app/approved">
+              <i class="fas fa-exchange-alt fa-lg"></i>Apporved List
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+   
+
+      
+
+       <li class="dropdown LandingLogout " id="headerNavigationItems">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             <i class="fas fa-user fa-lg"></i> Users
+             <b class="caret"></b>
+           </a>
+           <ul class="dropdown-menu dropdown-with-icons">
+             <li>
+               <a routerLink="/login">
+                 <i class="fas fa-power-off fa-lg"></i> Logout
+               </a>
+             </li>
+           </ul>
+         </li>
+     </ul>
+
+   </div>
+   <img src="./../../assets/img/school/logo.png" style="color:white;position: absolute;left:20px;top:0;" width="160">
+
+ </div>
+</nav>
+<div class="section">
+ <router-outlet></router-outlet>
+</div>
+  </div>
+  <hr>
+   <div class="row text-center footer">
+       <div class="col-md-3">
+           <h4>Powered by School</h4>
+       </div>
+       <div class="col-md-6"></div>
+       <div class="col-md-3">
+           <h4>Copyrights @ Triodesk</h4>
+       </div>
+   </div>
+</div>

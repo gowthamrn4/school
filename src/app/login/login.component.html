@@ -1,0 +1,107 @@
+<div class="page-header header-filter" style="background-image: url('../assets/img/pexels-photo-681331.jpeg'); background-size: cover; background-position: top center;">
+  <div id="msg" *ngIf="!isNewUser">
+          <p *ngIf="errorMessage.length > 0" class="alert alert-danger alert-dismissible fade show">
+              {{errorMessage}}</p>
+          <p  *ngIf="error.message.length > 0" class="alert alert-danger alert-dismissible fade show">
+              {{error.message}}</p>
+      </div>
+  <div class="container">
+         
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        <div class="card card-signup">
+          <!-- <form class="form" method="" action=""> -->
+          <form #personForm="ngForm" (ngSubmit)="onLogin(personForm.value)">    
+            <div class="header header-primary text-center">
+              <h4 class="card-title">School</h4>
+              <!-- <div class="social-line">
+                <a href="#pablo" class="btn btn-just-icon btn-simple">
+                  <i class="fa fa-facebook-square"></i>
+                </a>
+                <a href="#pablo" class="btn btn-just-icon btn-simple">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a href="#pablo" class="btn btn-just-icon btn-simple">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+              </div> -->
+            </div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4 col-xs-offset-4 col-xs-4">
+                  <div class="school_logo text-center">
+                    <img src="./../../assets/img/school/logo1.png"   alt="Circle Image" class="img-circle img-responsive">
+                  </div>
+                </div>
+            </div>
+            <p class="description text-center">Our Secure Application</p>
+            <div class="card-content">
+
+              <!-- <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="material-icons">face</i>
+                </span>
+                <div class="form-group is-empty"><input type="text" class="form-control" placeholder="First Name..."><span class="material-input"></span></div>
+              </div> -->
+            
+
+              <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">email</i>
+                      </span>
+                          <div class="form-group  is-empty">
+                        <!-- <input type="text" class="form-control" placeholder="Email..."> -->
+                        <input type="username" name="email" class="form-control" id="name" [(ngModel)]="email" placeholder="UserName"  #Username="ngModel" minlength="6" required ngModel>
+
+                        <div *ngIf="Username.errors && (Username.touched|| Username.dirty)" class="alert text-primary">
+                            <div  [hidden]="!Username.errors.required">
+                                *Emailid required
+                            </div>
+                            <div [hidden]="!Username.errors.minlength">
+                                  *Please enter valid Username
+                            </div>                                                      
+                        </div>
+                        
+                        <span class="material-input"></span></div>
+                    </div>
+      
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">lock_outline</i>
+                      </span>
+                          <div class="form-group  is-empty">
+                        <!-- <input type="password" placeholder="Password..." class="form-control"> -->
+                        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" placeholder="Password" #Password="ngModel" minlength="8" required ngModel>
+                        <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
+                            <div [hidden]="!Password.errors.required">
+                                *Password requried
+                              </div>
+                              <div [hidden]="!Password.errors.minlength">
+                                 *Please enter minimum 6 character
+                              </div>
+                        </div>  
+                        <span class="material-input"></span></div>
+                    </div>
+      
+              <!-- If you want to add a checkbox to this form, uncomment this code
+
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="optionsCheckboxes" checked>
+                  Subscribe to newsletter
+                </label>
+              </div> -->
+            </div>
+            <div class="footer text-center">
+              <!-- <a routerLink="/landingpage" class="btn btn-primary btn-round">Get Started</a> -->
+                              <button class="btn btn-primary btn-round" [disabled]="!personForm.form.valid">Login</button>
+            </div>
+            <div class="text-center">
+                <h6><a  routerLink="/signup" >Singup Click Here..</a></h6>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
