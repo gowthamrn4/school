@@ -24,4 +24,79 @@
             <button class="btn btn-primary" (click)="findStudent()">Find</button>
         </div>
     </div>
-</div>
+    <div *ngIf="student.dob">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group is-empty">
+                    <label class="control-label">Name</label>
+                    <input type="text" name="studentName" #name="ngModel" class="form-control" [(ngModel)]="student.studentName" minlength="4" ngModel required>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group is-empty">
+                    <label class="control-label">Father Name</label>
+                    <input type="text" name="fatherName" #fathername="ngModel" [(ngModel)]="student.fatherName" class="form-control" minlength="4" ngModel required>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group is-empty">
+                    <label class="control-label">Mother Name</label>
+                    <input type="text" name="motherName" #mothername="ngModel" [(ngModel)]="student.motherName" class="form-control" minlength="4" ngModel required>
+                    <span class="material-input"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group  is-empty">
+                    <label class="control-label">DOB</label>
+                    <input type="date" name="dob" #dob="ngModel" [(ngModel)]="student.dob" class="form-control" ngModel required>
+                    <div *ngIf="dob.errors && dob.touched" class="alert text-danger">
+                        <span class="material-input"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group  is-empty">
+                        <label class="control-label">Gender</label>
+                        <!-- <input type="text" name="gender" ngModel="gender" class="form-control"  ngModel required > -->
+                        <select name="gender" #gender="ngModel" [(ngModel)]="student.gender" class="form-control" ngModel required>
+               <option value="" disabled> Gender </option>
+               <option value="Male">   Male </option>
+               <option value="Female"> Female </option>
+               <option value="Other">  Other </option>
+           </select>
+                        <span class="material-input"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group  is-empty">
+                        <label class="control-label">Standart</label>
+                        <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
+                        <select name="standard" #standard="ngModel" [(ngModel)]="student.standard" class="form-control" ngModel required>
+                  <option value="" disabled> Standard </option>
+                  <option value="1">   1 </option>
+                  <option value="2">   2 </option>
+                  <option value="3">   3 </option>
+                  <option value="4">   4 </option>
+                  <option value="5">   5 </option>
+                  <option value="6">   6 </option>
+                  <option value="7">   7 </option>
+                  <option value="8">   8 </option>
+                  <option value="9">   9 </option>
+                  <option value="10">   10 </option>
+                  <option value="11">   11 </option>
+                  <option value="12">   12</option>
+              </select>
+                        <span class="material-input"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="notification" *ngIf="student?.dob">
+            No Records Found
+        </div>
+    </div>

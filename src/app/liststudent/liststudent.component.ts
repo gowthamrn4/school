@@ -32,8 +32,9 @@ export class ListstudentComponent implements OnInit {
   }
   getAllStudents(){
     this.dataservice.getAllStudents().subscribe(res=>{
-      this.student=res.state.data
-      this.allStudents.push(this.student)
+      for(var j=0;j<res.length;j++){
+        this.allStudents.push(res[j].state.data)
+      }
           for(let i=0;i<this.allStudents.length;i++){
               if(this.allStudents[i].standard==="12"){
                 this.twelthStudents.push(this.allStudents[i])

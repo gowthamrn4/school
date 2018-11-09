@@ -17,7 +17,7 @@ export class StudentComponent implements OnInit {
   }
   newStudent(value){
     let data={
-      studentId: "SCL" +value.standard+ Math.random().toString(20).slice(2),
+      studentId: "S"+new Date().getTime(),
       studentName:value.studentName,
       dob:value.dob,
       fatherName:value.fatherName,

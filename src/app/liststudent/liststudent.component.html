@@ -1,566 +1,591 @@
 <div class="container">
-  <div class="row">
-          <div class="col-md-6 col-sm-6 col-6">
-              <h5>Students List</h5>
-          </div>
-          <div class="col-md-6 col-sm-6 col-6" style="text-align:right">
-                  <a routerLink="/app"> <button class="btn btn-primary" style="padding:10px;">   <i class="material-icons">add</i>Add Students</button></a>
-              </div>
-      </div>    <div class="row">
-  <div class="col-md-3 col-sm-5">
-      <ul class="nav nav-pills nav-pills-btn-primary">
-          <li class="active">
-              <a href="#tab1" data-toggle="tab">12<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab2" data-toggle="tab">11<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab3" data-toggle="tab">10<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab4" data-toggle="tab">9<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab5" data-toggle="tab">8<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab6" data-toggle="tab">7th Standard</a>
-          </li>
-          <li>
-              <a href="#tab7" data-toggle="tab">6<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab8" data-toggle="tab">5<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab9" data-toggle="tab">4<sup>th</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab10" data-toggle="tab">3<sup>rd</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab11" data-toggle="tab">2<sup>nd</sup> Standard</a>
-          </li>
-          <li>
-              <a href="#tab12" data-toggle="tab">1<sup>st</sup> Standard</a>
-          </li>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-6">
+            <h5>Students List</h5>
+        </div>
+        <div class="col-md-6 col-sm-6 col-6" style="text-align:right">
+            <a routerLink="/app"> <button class="btn btn-primary" style="padding:10px;">   <i class="material-icons">add</i>Add Students</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-5">
+            <ul class="nav nav-pills nav-pills-btn-primary">
+                <li class="active">
+                    <a href="#tab1" data-toggle="tab">12<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab2" data-toggle="tab">11<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab3" data-toggle="tab">10<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab4" data-toggle="tab">9<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab5" data-toggle="tab">8<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab6" data-toggle="tab">7th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab7" data-toggle="tab">6<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab8" data-toggle="tab">5<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab9" data-toggle="tab">4<sup>th</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab10" data-toggle="tab">3<sup>rd</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab11" data-toggle="tab">2<sup>nd</sup> Standard</a>
+                </li>
+                <li>
+                    <a href="#tab12" data-toggle="tab">1<sup>st</sup> Standard</a>
+                </li>
 
-      </ul>
-  </div>
+            </ul>
+        </div>
 
-  <div class="col-md-9 col-sm-7">
-      <div class="tab-content">
-          <div class="tab-pane active" id="tab1">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor='let students of twelthStudents;let i=index'>
-                              <td class="text-center">1</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/viewstudent/{{students.id}}">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+        <div class="col-md-9 col-sm-7">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let students of twelthStudents;let i=index'>
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/viewstudent/{{students.id}}">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="twelthStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          
-          <div class="tab-pane" id="tab2">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor='let students of eleventhStudents;let i=index'>
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="twelthStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="tab2">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let students of eleventhStudents;let i=index'>
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="eleventhStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab3">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of tenthStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="eleventhStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of tenthStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="tenthStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab4">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of ninethStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="tenthStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of ninethStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="ninethStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab5">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of eighthStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="ninethStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab5">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of eighthStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="eighthStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab6">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of seventhStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="eighthStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab6">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of seventhStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="seventhStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab7">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of sixthStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="seventhStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab7">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of sixthStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="sixthStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab8">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of fifthStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="sixthStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab8">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of fifthStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="fifthStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab9">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of fourthStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="fifthStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab9">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of fourthStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="fourthStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab10">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                        
-                          <tr *ngFor="let students of thirdStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="fourthStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab10">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let students of thirdStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="thirdStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab11">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let students of secondStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="thirdStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab11">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let students of secondStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-                  <div  class="alert alert-success notification" *ngIf="secondStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-          <div class="tab-pane" id="tab12">
-              <div class="table-responsive">
-                  <table class="table">
-                      <thead>
-                          <tr>
-                              <th class="text-center">#</th>
-                              <th>Name</th>
-                              <th>Gender</th>
-                              <th>FatherName</th>
-                              <th class="text-right">Mobile</th>
-                              <th class="text-right">Actions</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                             
-                          <tr *ngFor="let students of firstStudents;let i=index">
-                              <td class="text-center">{{i+1}}</td>
-                              <td>{{students.name}}</td>
-                              <td>{{students.gender}}</td>
-                              <td>{{students.fathername}}</td>
-                              <td class="text-right">{{students.mobilenumber}}</td>
-                              <td class="td-actions text-right">
-                                      <a routerLink="/app/addmission">
-                                          <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="alert alert-success notification" *ngIf="secondStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>DOB</th>
+                                    <th>Father name</th>
+                                    <th class="text-right">Gender</th>
+                                    <th class="text-right">School</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr *ngFor="let students of firstStudents;let i=index">
+                                    <td class="text-center">{{students.studentId}}</td>
+                                    <td>{{students.studentName}}</td>
+                                    <td>{{students.dob}}</td>
+                                    <td>{{students.fatherName}}</td>
+                                    <td class="text-right">{{students.gender}}</td>
+                                    <td class="text-right">{{students.school}}</td>
+                                    <td class="td-actions text-right">
+                                        <a routerLink="/app/addmission">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
-                                  <a routerLink='/app/editstudent/{{students.id}}'>
-                                      <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink='/app/editstudent/{{students.id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                           <i class="material-icons">edit</i>
                                       </button>
-                                  </a>
-                                  <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        </a>
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                       <i class="material-icons">close</i>
                                   </button>
-                              </td>
-                          </tr>
-                         
-                      </tbody>
-                  </table>
-                  <div  class="notification" *ngIf="firstStudents==0">
-                          No Records Found
-                   </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="notification" *ngIf="firstStudents==0">
+                            No Records Found
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
