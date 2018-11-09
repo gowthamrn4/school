@@ -39,24 +39,24 @@ export class DataService {
 
 
   getAllStudents(){
-    return this.http.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/student')
+    return this.https.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/student')
     .pipe(map(data=>this.allStudents=data.json()))
   }
   transferStudent1(value){
-    return this.http.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing',value)
+    return this.https.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing',value)
     .pipe(map(data=>this.Tstudent=data.json()))
    
   }
   getAllTransfer(){
-    return this.http.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing')
+    return this.https.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing')
     .pipe(map(data=>this.Tstudent1=data.json()))
   }
   apporved(value){
-    return this.http.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/approved',value)
+    return this.https.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/approved',value)
     .pipe(map(data=>this.Tstudent2=data.json()))
   }
   getapporved(){
-    return this.http.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/approved')
+    return this.https.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/approved')
     .pipe(map(data=>this.Tstudent3=data.json()))
   }
   // newUser(value){
@@ -85,7 +85,7 @@ export class DataService {
   // }
   /* POST NEW NEWS */
   createStudent(value){
-    return this.http.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/student',value)
+    return this.https.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/student',value)
     .pipe(map(data=>this.cstudent=data.json()))
    
   }
