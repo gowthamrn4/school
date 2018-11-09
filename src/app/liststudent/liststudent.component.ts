@@ -21,7 +21,8 @@ export class ListstudentComponent implements OnInit {
   fourthStudents:any=[]
   thirdStudents:any=[]
   secondStudents:any=[]
-  firstStudents:any=[]
+  firstStudents:any=[];
+  student:any
   constructor( public dataservice:DataService,
                public router:Router  ) { }
 
@@ -31,7 +32,8 @@ export class ListstudentComponent implements OnInit {
   }
   getAllStudents(){
     this.dataservice.getAllStudents().subscribe(res=>{
-      this.allStudents=res;
+      this.student=res.state.data
+      this.allStudents.push(this.student)
           for(let i=0;i<this.allStudents.length;i++){
               if(this.allStudents[i].standard==="12"){
                 this.twelthStudents.push(this.allStudents[i])
