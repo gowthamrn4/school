@@ -22,6 +22,7 @@ export class StudentComponent implements OnInit {
       // http call ends
   this.dataservice.createStudent(value).subscribe(res=>{
     this.newstudent=res;
+    alert("Add sucessfully")
          // http call ends
     this.router.navigate(['/app/liststudent'])
   })

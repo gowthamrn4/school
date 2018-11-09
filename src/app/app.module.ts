@@ -25,6 +25,7 @@ import {DataService} from './../app/service/data';
 import {AuthService} from './../app/service/auth';
 import { ViewtransferComponent } from './viewtransfer/viewtransfer.component';
 import { ApprovedviewComponent } from './approvedview/approvedview.component';
+import { FindstudentComponent } from './findstudent/findstudent.component';
 
 var config = {
   apiKey: "AIzaSyD8d-WkpT0Ccopjxv0YxxJrrA3veuG_4zs",
@@ -50,7 +51,8 @@ var config = {
     ListoutgoingtransferComponent,
     ApporvedComponent,
     ViewtransferComponent,
-    ApprovedviewComponent
+    ApprovedviewComponent,
+    FindstudentComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ var config = {
       {path:"listoutgoingtransfer",component:ListoutgoingtransferComponent},
       {path:"approved",component:ApporvedComponent},
       {path:"viewtransfer/:id",component:ViewtransferComponent},
-      {path:"approvedview/:id",component:ApprovedviewComponent}
+      {path:"approvedview/:id",component:ApprovedviewComponent},
+      {path:"findstudent",component:FindstudentComponent}
     ]
     }
     ])

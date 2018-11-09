@@ -576,7 +576,7 @@ var IncommingtransferComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".landingContainer{\r\n    padding: 0;\r\n}\r\n.footer{\r\n    font-size:10px;\r\n}"
+module.exports = ".landingContainer{\r\n    padding: 0;\r\n}\r\n.footer{\r\n    font-size:10px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1158,27 +1158,27 @@ var DataService = /** @class */ (function () {
     };
     DataService.prototype.getAllStudents = function () {
         var _this = this;
-        return this.http.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/student')
+        return this.http.get('https://5bdbe65b433b4f0013e6e024.mockapi.io/student')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return _this.allStudents = data.json(); }));
     };
     DataService.prototype.transferStudent1 = function (value) {
         var _this = this;
-        return this.http.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing', value)
+        return this.http.post('https://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing', value)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return _this.Tstudent = data.json(); }));
     };
     DataService.prototype.getAllTransfer = function () {
         var _this = this;
-        return this.http.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing')
+        return this.http.get('https://5bdbe65b433b4f0013e6e024.mockapi.io/outgoing')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return _this.Tstudent1 = data.json(); }));
     };
     DataService.prototype.apporved = function (value) {
         var _this = this;
-        return this.http.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/approved', value)
+        return this.http.post('https://5bdbe65b433b4f0013e6e024.mockapi.io/approved', value)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return _this.Tstudent2 = data.json(); }));
     };
     DataService.prototype.getapporved = function () {
         var _this = this;
-        return this.http.get('http://5bdbe65b433b4f0013e6e024.mockapi.io/approved')
+        return this.http.get('https://5bdbe65b433b4f0013e6e024.mockapi.io/approved')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return _this.Tstudent3 = data.json(); }));
     };
     // newUser(value){
@@ -1207,7 +1207,7 @@ var DataService = /** @class */ (function () {
     /* POST NEW NEWS */
     DataService.prototype.createStudent = function (value) {
         var _this = this;
-        return this.http.post('http://5bdbe65b433b4f0013e6e024.mockapi.io/student', value)
+        return this.http.post('https://5bdbe65b433b4f0013e6e024.mockapi.io/student', value)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return _this.cstudent = data.json(); }));
     };
     DataService = __decorate([
@@ -1385,6 +1385,7 @@ var StudentComponent = /** @class */ (function () {
         // http call ends
         this.dataservice.createStudent(value).subscribe(function (res) {
             _this.newstudent = res;
+            alert("Add sucessfully");
             // http call ends
             _this.router.navigate(['/app/liststudent']);
         });
