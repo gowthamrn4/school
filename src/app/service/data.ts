@@ -97,6 +97,9 @@ export class DataService {
     return this.http.get('/api/example/student?studentId='+$scope.studentId)
   
   }
+  getTransfersList(){
+    return this.http.get('http://localhost:10012/api/example/transfers')
+  }
 
 }
 

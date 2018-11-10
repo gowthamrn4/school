@@ -1,6 +1,6 @@
 <div class="col-md-12" style="margin-top: 2.5rem">
 
-  
+
     <div class="container">
         <div class="col-md-12">
             <div class="tab-content">
@@ -9,27 +9,23 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="text-center">#</th>
-                                    <th>Standard</th>
+                                    <th class="text-center">StudentId</th>
                                     <th>Name</th>
+                                    <th>From school</th>
+                                    <th>Standard</th>
                                     <th>Gender</th>
-                                    <th>Transfer To School </th>
-                                    <th>Reason</th>
-                                    <th>Date</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let student of allStudents">
-                                    <td class="text-center">{{student.id}}</td>
-                                    <td>{{student.standard}}</td>
-                                    <td>{{student.name}}</td>
-                                    <td>{{student.gender}}</td>
-                                    <td>{{student.school}}</td>
-                                    <td>{{student.reason}}</td>
-                                    <td>{{student.date}}</td>
+                                <tr *ngFor="let list of outgoingTransferList">
+                                    <td class="text-center">{{list.StudentId}}</td>
+                                    <td>{{list.studentName}}</td>
+                                    <td>{{list.destSchool}}</td>
+                                    <td>{{list.Standard}}</td>
+                                    <td>{{list.gender}}</td>
                                     <td class="td-actions text-right">
-                                        <a routerLink="/app/viewtransfer/{{student.id}}">
+                                        <!-- <a routerLink="/app/viewtransfer/{{student.id}}">
                                           <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
                                                   <i class="material-icons">remove_red_eye</i>
                                               </button></a>
@@ -38,7 +34,10 @@
                                         </button></a>
                                         <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
-                                        </button>
+                                        </button> -->
+                                        <button type="button" rel="tooltip" class="btn btn-primary">
+                                                Approve
+                                            </button>
                                     </td>
                                 </tr>
                             </tbody>

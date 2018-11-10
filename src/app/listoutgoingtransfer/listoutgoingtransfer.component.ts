@@ -8,18 +8,25 @@ import {Router} from '@angular/router';
   styleUrls: ['./listoutgoingtransfer.component.css']
 })
 export class ListoutgoingtransferComponent implements OnInit {
-  allStudents:any;
-  constructor(public dataservice:DataService,
-    public router:Router) { }
+  allTransferLists:any
+  outgoingTransferList:any=[]
+
+  constructor(public dataService:DataService) { }
 
   ngOnInit() {
-    this.getAllStudents()
   }
-  getAllStudents(){
-    this.dataservice.getAllTransfer().subscribe(res=>{
-      this.allStudents=res;
-      console.log(this.allStudents)
-      
+
+  getOutgoingList(){
+    this.dataService.getTransfersList().subscribe(res=>{
+      for(var j=0;j<res.length;j++){
+        this.allTransferLists.push(res[j].state.data)
+      }
+      for(var i=0;i<this.allTransferLists.length;i++){
+        if(this.allTransferLists[i].originSchool==="O=SchoolB, L=Mumbai, C=IN"){
+         this.outgoingTransferList.push(this.allTransferLists[i])
+        }
+      }
+
     })
   }
 }

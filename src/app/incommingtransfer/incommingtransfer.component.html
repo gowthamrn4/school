@@ -1,55 +1,55 @@
 <div class="col-md-12" style="margin-top: 2.5rem">
 
-  
-          <div class="container">
-              <div class="col-md-12">
-                  <div class="tab-content">
-                      <div class="tab-pane active" id="tab1">
-                          <div class="table-responsive">
-                              <table class="table">
-                                  <thead>
-                                      <tr>
-                                          <th class="text-center">#</th>
-                                          <th>Standard</th>
-                                          <th>Name</th>
-                                          <th>Gender</th>
-                                          <th>Transfer To School </th>
-                                          <th>Reason</th>
-                                          <th>Date</th>
-                                          <th class="text-right">Actions</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr >
-                                          <td class="text-center">1</td>
-                                          <td>12</td>
-                                          <td>Gowtham</td>
-                                          <td>Male</td>
-                                          <td>z.k.m.hr.sec.school</td>
-                                          <td>pass</td>
-                                          <td>20-06-2018</td>
-                                          <td class="td-actions text-right">
-                                              <a routerLink="/app/viewstudent">
-                                                <button type="button" rel="tooltip"  class="btn btn-info" data-original-title="" title="">
+
+    <div class="container">
+        <div class="col-md-12">
+            <h5>Incoming Transfer</h5>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">StudentId</th>
+                                    <th>Name</th>
+                                    <th>From school</th>
+                                    <th>Standard</th>
+                                    <th>Gender</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let list of incommingTransferList;let i=index">
+                                <tr>
+                                    <td class="text-center">{{list.StudentId}}</td>
+                                    <td>{{list.studentName}}</td>
+                                    <td>{{list.originSchool}}</td>
+                                    <td>{{list.Standard}}</td>
+                                    <td>{{list.gender}}</td>
+                                    <td class="td-actions text-right">
+                                        <!-- <a routerLink="/app/viewstudent">
+                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
                                                         <i class="material-icons">remove_red_eye</i>
                                                     </button></a>
-                                            <a routerLink="/app/outgoingtransfer"><button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                        <a routerLink="/app/outgoingtransfer"><button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
                                                   <i class="material-icons">edit</i>
                                               </button></a>
-                                              <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
+                                        <button type="button" rel="tooltip" (click)="deleteStudent(students)" class="btn btn-danger" data-original-title="" title="">
                                                   <i class="material-icons">close</i>
-                                              </button>
-                                          </td>
-                                      </tr>
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <hr>
-     
-   
-     
+                                              </button> -->
+                                        <button type="button" rel="tooltip" class="btn btn-primary">
+                                                    Approve
+                                                </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+
 </div>
